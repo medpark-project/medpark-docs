@@ -1,0 +1,19 @@
+# Ambiente Virtual do Python
+venv/
+env/
+.venv/
+
+# Arquivos de Cache do Python
+__pycache__/
+*.pyc
+
+# Pasta de build do MkDocs (MUITO IMPORTANTE)
+site/
+
+# Arquivos de IDEs e Editores
+.vscode/
+.idea/
+
+# Arquivos de Sistema Operacional
+.DS_Store
+Thumbs.db
