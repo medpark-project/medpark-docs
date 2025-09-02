@@ -1,0 +1,35 @@
+# Configuração do Projeto
+site_name: MedPark Docs
+site_url: https://brunna-martins.github.io/medpark-docs/
+site_author: Brunna Louise Martins Rocha
+
+# Tema
+theme:
+  name: material
+  language: pt
+  palette:
+    # Light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Mudar para o modo escuro
+    # Dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Mudar para o modo claro
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - search.highlight
+
+# Estrutura de Navegação do Site
+nav:
+  - 'Início': 'index.md'
+  - 'Planejamento':
+    - 'User Stories': 'user_stories.md'
