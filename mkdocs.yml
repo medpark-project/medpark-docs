@@ -7,6 +7,8 @@ site_author: Brunna Louise Martins Rocha
 theme:
   name: material
   language: pt
+  logo: assets/logo.png
+  favicon: assets/logo.png
   palette:
     # Light mode
     - scheme: default
