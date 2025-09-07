@@ -35,6 +35,14 @@ nav:
   - 'Início': 'index.md'
   - 'Planejamento':
     - 'User Stories': 'user_stories.md'
+    - 'Diagramas UML': 'diagramas.md'
 
 extra_css:
   - assets/custom.css
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
