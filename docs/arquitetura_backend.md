@@ -5,19 +5,31 @@ A arquitetura do backend do MedPark segue um padrão de **separação de camadas
 ## Estrutura de Pastas Principal
 
 medpark-backend/
-├── app/                  
+
+├── app/  
+
 │   ├── api/              # Camada de API (os "endpoints" ou rotas)
+
 │   ├── core/             # Configurações do projeto
+
 │   ├── crud/             # Lógica de acesso ao banco de dados (CRUD)
+
 │   ├── db/               # Configuração da conexão com o banco de dados
+
 │   ├── models/           # Modelos do banco de dados (SQLAlchemy)
+
 │   └── schemas/          # Modelos de dados da API (Pydantic)
+
 │   └── main.py           # Ponto de entrada da aplicação FastAPI
 │
 ├── tests/                # Pasta para os testes automatizados
+
 ├── .gitignore
-├── Dockerfile            # Receita para construir a imagem da aplicação
+
+├── Dockerfile          
+
 ├── docker-compose.yml    # Orquestrador que sobe a aplicação e o banco
+
 └── requirements.txt      # Lista de pacotes Python necessários
 
 

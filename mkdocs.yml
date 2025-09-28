@@ -33,10 +33,12 @@ theme:
 # Estrutura de Navegação do Site
 nav:
   - 'Início': 'index.md'
-  - 'Planejamento':
-    - 'User Stories': 'user_stories.md'
-    - 'Diagramas UML': 'diagramas.md'
-    - 'Arquitetura Backend': 'arquitetura_backend.md'
+  - 'User Stories': 'user_stories.md'
+  - 'Diagramas UML': 'diagramas.md'
+  - 'Arquitetura Backend': 'arquitetura_backend.md'
+  - 'Testes Backend': 'testes_backend.md'
+  - 'Protótipo': 'prototipo.md'
+  - 'Docker Backend': 'docker_backend.md'
 
 extra_css:
   - assets/custom.css
