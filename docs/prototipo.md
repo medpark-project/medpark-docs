@@ -3,7 +3,7 @@
 
 ## Paleta de Cores proposta
 
-![PaLeta de Cores](./assets/ColorPalette.png){width=50%}
+![PaLeta de Cores](./assets/ColorPalette.png)
 
 ## Protótipo
 
