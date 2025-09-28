@@ -36,6 +36,7 @@ nav:
   - 'Planejamento':
     - 'User Stories': 'user_stories.md'
     - 'Diagramas UML': 'diagramas.md'
+    - 'Arquitetura Backend': 'arquitetura_backend.md'
 
 extra_css:
   - assets/custom.css
