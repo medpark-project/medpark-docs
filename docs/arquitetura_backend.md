@@ -104,4 +104,3 @@ Cada módulo de funcionalidade (ex: `src/tipo_veiculo/`) contém toda a lógica 
 </div>
 
 <p class="caption">Tabela 1: Histórico de versões do documento de arquitetura do backend.</p>
-mento de arquitetura do backend.</p>
