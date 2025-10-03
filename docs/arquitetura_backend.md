@@ -1,51 +1,78 @@
 # Arquitetura do Backend - MedPark
 
-A arquitetura do backend do MedPark segue um padrão de **separação de camadas (ou responsabilidades)**, inspirado em designs de software limpos e escaláveis. O objetivo é garantir que cada parte do código tenha um propósito bem definido, facilitando a manutenção, testabilidade e o crescimento do projeto.
+A arquitetura do backend do MedPark foi refatorada para seguir um padrão de **Agrupamento por Funcionalidade** (também conhecido como "Feature-based" ou "Vertical Slices").
+
+O objetivo desta arquitetura é promover alta coesão e baixo acoplamento, agrupando todos os arquivos relacionados a uma única entidade de negócio (como `Usuario` ou `TipoVeiculo`) em um mesmo módulo. Isso torna o projeto mais organizado, escalável e fácil de manter à medida que novas funcionalidades são adicionadas.
 
 ## Estrutura de Pastas Principal
 
+A estrutura atual organiza o código dentro de um diretório `src/`, com submódulos para cada funcionalidade de negócio.
+
 medpark-backend/
 
-├── app/  
+medpark-backend/
 
-│   ├── api/              # Camada de API (os "endpoints" ou rotas)
+├── .github/              # Automação de CI/CD com GitHub Actions
 
-│   ├── core/             # Configurações do projeto
+├── src/                  # Diretório raiz do código-fonte da aplicação
 
-│   ├── crud/             # Lógica de acesso ao banco de dados (CRUD)
+│   ├── db/               # Configuração da conexão e dependências do banco
 
-│   ├── db/               # Configuração da conexão com o banco de dados
+│   ├── plano_mensalista/   # Módulo da funcionalidade "Plano Mensalista"
 
-│   ├── models/           # Modelos do banco de dados (SQLAlchemy)
+│   ├── tipo_veiculo/     # Módulo da funcionalidade "Tipo de Veículo"
 
-│   └── schemas/          # Modelos de dados da API (Pydantic)
+│   ├── usuario/          # Módulo da funcionalidade "Usuário"
+
+│   ├── __init__.py       # Torna 'src' um pacote Python
+
+│   ├── conftest.py       # Configuração central para os testes (Pytest)
 
 │   └── main.py           # Ponto de entrada da aplicação FastAPI
+
 │
-├── tests/                # Pasta para os testes automatizados
 
 ├── .gitignore
 
-├── Dockerfile          
+├── Dockerfile
 
-├── docker-compose.yml    # Orquestrador que sobe a aplicação e o banco
+├── docker-compose.yml
 
-└── requirements.txt      # Lista de pacotes Python necessários
+└── requirements.txt
+
+## Estrutura de um Módulo de Funcionalidade
+
+Cada módulo de funcionalidade (ex: `src/tipo_veiculo/`) contém toda a lógica para aquela entidade, dividida em camadas:
+
+└── tipo_veiculo/
+
+├── __init__.py
+
+├── model.py         # Camada de Dados: Modelo da tabela (SQLAlchemy)
+
+├── schema.py        # Camada de Apresentação: Contratos da API (Pydantic)
+
+├── repository.py    # Camada de Acesso a Dados: Funções CRUD (ex-crud)
+
+├── router.py        # Camada de Apresentação: Endpoints da API (ex-api)
+
+├── test_integracao.py # Teste de Integração para o router
+
+└── test_unitario.py # Teste Unitário para o repository
 
 
-## Responsabilidade de Cada Camada
+## Responsabilidade de Cada Arquivo
 
-- **`app/main.py`** Inicia a aplicação e registra os diferentes routers de endpoints.
+- **`src/main.py`**: O ponto de entrada principal. É responsável por criar a aplicação FastAPI e incluir os `router.py` de cada módulo de funcionalidade.
 
-- **`app/api/`** Contém os endpoints. Eles recebem requisições HTTP, validam com schemas e chamam o CRUD.
+- **`src/db/`**: Um módulo compartilhado que contém a lógica de conexão com o banco de dados (`session.py`) e a dependência `get_db` (`dependencies.py`) usada pelos routers.
 
-- **`app/schemas/` - (Pydantic):** Define a estrutura e as regras dos dados que entram e saem da API. Garante que nenhum dado inválido seja processado.
-
-- **`app/crud/`** Contém a lógica de negócio e de interação com o banco de dados. Sabe como criar, ler, atualizar e deletar registros.
-
-- **`app/models/` - (SQLAlchemy):** Descreve a estrutura das tabelas no banco de dados.
-
-- **`app/db/`** Gerencia a configuração e as sessões de conexão com o banco de dados.
+- **Dentro de cada módulo (ex: `src/usuario/`)**:
+    - **`model.py`**: Define a estrutura da tabela do banco de dados usando SQLAlchemy.
+    - **`schema.py`**: Define os contratos de dados para a API usando Pydantic.
+    - **`repository.py`**: Contém a lógica de negócio e as funções para interagir com o banco de dados (Create, Read, Update, Delete).
+    - **`router.py`**: Define os endpoints da API (`@router.get`, `@router.post`, etc.). Ele recebe as requisições HTTP, usa os `schema.py` para validação e chama as funções do `repository.py`.
+    - **`test_*.py`**: Arquivos de teste co-localizados, que validam o comportamento do módulo.
 
 ## Histórico de Versões
 
@@ -64,10 +91,17 @@ medpark-backend/
         <td align="left">1.0</td>
         <td align="left">28/09/2025</td>
         <td align="left">Brunna Louise</td>
-        <td align="left">Criação do documento.</td>
+        <td align="left">Criação inicial do documento com arquitetura por camada.</td>
+      </tr>
+      <tr>
+        <td align="left">2.0</td>
+        <td align="left">03/10/2025</td>
+        <td align="left">Brunna Louise</td>
+        <td align="left">Refatoração completa para arquitetura por funcionalidade (feature-based), seguindo novas diretrizes.</td>
       </tr>
     </tbody>
   </table>
 </div>
 
 <p class="caption">Tabela 1: Histórico de versões do documento de arquitetura do backend.</p>
+mento de arquitetura do backend.</p>
