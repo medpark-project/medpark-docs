@@ -33,6 +33,7 @@ theme:
 # Estrutura de Navegação do Site
 nav:
   - 'Início': 'index.md'
+  - 'Banco de Dados': 'banco_de_dados.md'
   - 'User Stories': 'user_stories.md'
   - 'Diagramas UML': 'diagramas.md'
   - 'Arquitetura Backend': 'arquitetura_backend.md'
