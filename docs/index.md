@@ -61,6 +61,16 @@ A qualidade do código é garantida por uma suíte de automação completa:
     * **Testes Parametrizados:** Para testar múltiplos cenários de erro e validação de forma eficiente.
 * **CI/CD com GitHub Actions:** Todo `push` para o branch `main` aciona um workflow que automaticamente executa o linter e a suíte de testes completa em um ambiente limpo, garantindo que nenhum código com falhas seja integrado ao projeto.
 
+## Links do Projeto MedPark
+
+Para acessar o site, [clique aqui](https://medpark-frontend.vercel.app/).
+
+Para acessar o repositório do back-end, [clique aqui](https://github.com/medpark-project/medpark-backend/).
+
+Para acessar o repositório do front-end, [clique aqui](https://github.com/medpark-project/medpark-frontend/).
+
+Para acessar o repositório de autenticação, [clique aqui](https://github.com/medpark-project/medpark-auth-api/).
+
 ## Histórico de Versões
 
 <div align="center">
@@ -79,6 +89,12 @@ A qualidade do código é garantida por uma suíte de automação completa:
         <td align="left">28/10/2025</td>
         <td align="left">Brunna Louise</td>
         <td align="left">Criação do documento.</td>
+      </tr>
+      <tr>
+        <td align="left">1.1</td>
+        <td align="left">25/11/2025</td>
+        <td align="left">Brunna Louise</td>
+        <td align="left">Adiciona links do projeto.</td>
       </tr>
     </tbody>
   </table>
