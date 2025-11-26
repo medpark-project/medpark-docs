@@ -3,7 +3,7 @@
 ## Paleta de Cores proposta
 
 <div align="center">
-  <img src="./docs/assets/ColorPalette.png" alt="Paleta de Cores">
+  <img src="docs/assets/ColorPalette.png" alt="Paleta de Cores">
 </div>
 
 ## Protótipo
