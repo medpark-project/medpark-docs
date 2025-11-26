@@ -1,9 +1,10 @@
 # Protótipo
 
-
 ## Paleta de Cores proposta
-  
-![Paleta de Cores](./assets/ColorPalette.png)
+
+<div align="center">
+  <img src="./assets/ColorPalette.png" alt="Paleta de Cores">
+</div>
 
 ## Protótipo
 
